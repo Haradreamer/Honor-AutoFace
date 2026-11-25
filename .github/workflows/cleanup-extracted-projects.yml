@@ -1,0 +1,54 @@
+name: One-time removal of migrated non-AutoFace branches
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/cleanup-extracted-projects.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Remove explicitly reviewed legacy branches only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "Cleaning old non-AutoFace refs. AutoFace main and v2.0.2 release remain untouched."
+          while IFS= read -r branch; do
+            [[ -z "$branch" ]] && continue
+            if [[ "$branch" == main || "$branch" == *autoface* ]]; then
+              echo "REFUSED: $branch"
+              exit 1
+            fi
+            echo "Checking branch: $branch"
+            if gh api "repos/$GITHUB_REPOSITORY/branches/$branch" >/dev/null 2>&1; then
+              gh api -X DELETE "repos/$GITHUB_REPOSITORY/git/refs/heads/$branch" --silent
+              echo "Deleted: $branch"
+            else
+              echo "Already absent: $branch"
+            fi
+          done <<'BRANCHES'
+          feature/honor-system-updater-prototype
+          feature/magic-hub-0.2.0-google-only
+          feature/magic-hub-0.3.0-vis-home-gesture
+          feature/magic-hub-0.3.1-gesture-fixes
+          feature/magic-hub-0.3.2-gesture-assistant-test
+          feature/magic-hub-0.3.3-interaction-ux-test
+          feature/magic-hub-0.3.4-lens-camera-button
+          feature/magic-hub-0.3.5-visual-redesign
+          feature/magic-hub-0.3.6-isle-ui
+          feature/magic-hub-0.3.7-adb-setup
+          feature/magic-hub-0.3.8-complete-ui-shizuku
+          feature/magic-hub-0.3.9-accessibility-shizuku-ui
+          feature/magic-hub-0.4.0-permissions-footer-assist
+          feature/magic-hub-0.4.1-accordion-i18n
+          feature/magic-hub-0.4.2-settings-shizuku-switch
+          feature/magic-hub-0.4.3-edge-editor-preview
+          release/magic-hub-1.0.0
+          BRANCHES
+          echo "Completed branch cleanup. Git history may remain reachable through historical SHAs and caches."
