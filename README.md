@@ -1,4 +1,8 @@
-# AutoFace for HONOR
+# 🟣 AutoFace
+
+**Haradreamer Tools · Android · No root**
+
+[🇬🇧 English](README.md) · [🇷🇺 Русский](README.ru.md) · [📥 Download](../../releases/latest)
 
 **Automatically confirms successful face recognition on supported HONOR phones.**
 
@@ -6,15 +10,15 @@ AutoFace is a small, free Android utility made by **Haradreamer**. On some HONOR
 
 It **does not perform or bypass biometric authentication**. The phone must recognize your face first.
 
-## Download
+## 📥 Download
 
 **Version: 2.0.2** (Android APK)
 
-Check **[Releases](https://github.com/Haradreamer/Honor-AutoFace/releases)** for public APK downloads once the release asset has been published. **Do not download modified APKs from unofficial mirrors.**
+**[Download AutoFace 2.0.2](../../releases/latest)** **Do not download modified APKs from unofficial mirrors.**
 
 > This repository is for official binary distribution and documentation. Source code and signing keys are kept in a separate private development repository.
 
-## Features
+## ✨ Features
 
 - Automatically taps the confirmation button after supported HONOR face recognition succeeds.
 - Adjustable additional delay: **0–100 ms** (default **10 ms**).
@@ -24,15 +28,15 @@ Check **[Releases](https://github.com/Haradreamer/Honor-AutoFace/releases)** for
 - No root, ADB, account, or internet permission needed.
 - Local-only processing, with an on-device action counter.
 
-## Compatibility
+## 📱 Compatibility
 
 **Tested:** HONOR Magic9 Pro Max (WKL-AN20), MagicOS 11.
 
 Other HONOR phones displaying the same system confirmation screen may work, but are **not yet verified**. HUAWEI / EMUI / HarmonyOS compatibility is **unverified**. Please report your model and firmware if you test them.
 
-## Installation
+## ⚙️ Installation
 
-1. Download the **signed APK** from GitHub Releases when available and install it.
+1. Download the **signed APK** from GitHub Releases and install it.
 2. Launch AutoFace and select your language.
 3. Review the explanation of the Accessibility permission.
 4. Open **Accessibility settings** from AutoFace and enable its service.
@@ -50,7 +54,7 @@ Some HONOR / MagicOS versions restrict Accessibility access for sideloaded apps.
 
 **Security note:** Accessibility can inspect accessible screen contents and perform touches. Only grant this powerful permission if you trust the APK and its source. This is an Android safeguard, not a step you should take for unknown apps.
 
-## Privacy & security
+## 🔐 Privacy & security
 
 AutoFace does not request the Android **INTERNET** permission. Recognition checks, confirmations, and the diagnostic counter are performed locally. It does not capture, store, or transmit facial biometric data; face recognition is performed by the HONOR operating system.
 
@@ -58,7 +62,7 @@ AutoFace uses Android's AccessibilityService specifically to detect a supported 
 
 Release updates are signed using the same dedicated signing key to permit in-place upgrades. Never publish or share signing keys or passwords.
 
-## Feedback
+## 💬 Feedback
 
 For a compatibility report or bug, please open a [GitHub Issue](https://github.com/Haradreamer/Honor-AutoFace/issues) with:
 
@@ -70,6 +74,16 @@ For a compatibility report or bug, please open a [GitHub Issue](https://github.c
 
 **Independent project. Not affiliated with HONOR or HUAWEI.**
 
-## Support
+## 🌐 Other Haradreamer Tools projects
 
-AutoFace is free. Optional support for ongoing development: [Boosty — Haradreamer](https://boosty.to/haradreamer).
+- 🔵 [Isle](https://github.com/Haradreamer/Isle-HONOR-app) — Magic Capsule & AOD
+- 🟢 [MagicOS CN Tool](https://github.com/Haradreamer/Honor-Tools-CN) — HONOR configuration
+- 🟠 [Magic Hub](https://github.com/Haradreamer/Magic-Hub-app) — Google gestures
+
+## 💬 Community & support
+
+[Telegram](https://t.me/isle_universal) · [4PDA](https://4pda.to/forum/index.php?showtopic=1119615&view=findpost&p=145819882) · [Report a bug](../../issues) · [Boosty](https://boosty.to/haradreamer)
+
+Free independent project. Support is voluntary. Not affiliated with HONOR, HUAWEI or Google.
+
+**Haradreamer**
