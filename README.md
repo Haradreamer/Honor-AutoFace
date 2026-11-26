@@ -12,11 +12,20 @@ It **does not perform or bypass biometric authentication**. The phone must recog
 
 ## 📥 Download
 
-**Version: 2.0.2** (Android APK)
+**Current public release: 2.0.6.** A verified **2.0.6 build 209** update is prepared; the corresponding signed APK must be attached to the public release before the download is updated.
 
-**[Download AutoFace 2.0.2](../../releases/latest)** **Do not download modified APKs from unofficial mirrors.**
+**[Download current public AutoFace release](../../releases/latest)** **Do not download modified APKs from unofficial mirrors.**
 
 > This repository is for official binary distribution and documentation. Source code and signing keys are kept in a separate private development repository.
+
+## 🆕 Build 209 changes (2026-11-27)
+
+- Biometric confirmation detection is intentionally supported only for **Russian and English phone system languages**. This does **not** restrict the eight available AutoFace interface languages.
+- Recognizes the observed HONOR English success message `Face recognition successful`, alongside previously supported Russian/English triggers and their confirmation button labels.
+- Shows a translated language-support notice on the main screen.
+- Display version remains **2.0.6**; Android `versionCode` increases from **206** to **209**.
+
+> The GitHub Release APK currently linked above is the previous public build until the build 209 APK upload is completed.
 
 ## ✨ Features
 
